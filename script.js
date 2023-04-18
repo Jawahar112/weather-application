@@ -19,23 +19,23 @@ climate.innerHTML=data.current.condition.text;
 mph.innerHTML=`${data.current.wind_mph}mph`;
 kph.innerHTML=`${data.current.wind_kph}kph`;
 if(data.current.condition.text=="Clear"){
-image.src="Images/clear.svg"
+image.src="weathericons/clear.svg"
 }
 else if(data.current.condition.text=="Partly cloudy"){
-image.src="Images/cloud.svg"
+image.src="weathericons/cloud.svg"
 }
 else if(data.current.condition.text=="Sunny"){
- image.src="Images/clear.svg"
+ image.src="weathericons/clear.svg"
 }
 else if(data.current.condition.text=="Moderateorheavyrainwiththunder"){
 climate.style.fontsize="5px";
-image.src="Images/rain.svg"
+image.src="weathericons/rain.svg"
 }
 else if(data.current.condition.text == "Patchy rain possible"){
-image.src="Images/haze.svg"
+image.src="weathericons/haze.svg"
 }
 else if(data.current.condition.text=="Mist"){
-image.src="Images/cloud.svg"
+image.src="weathericons/cloud.svg"
 }
 
 else{
@@ -44,6 +44,12 @@ console.log("error");
 })
 
 }
-btn.addEventListener("click",function(){
+btn.addEventListener("click",function()
+{
+if(input.value=="")
+{
+alert("pls enter value")
+}
 getdata();
+input.value="";
 })
