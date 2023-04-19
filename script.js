@@ -6,13 +6,20 @@ var btn=document.querySelector("#search")
 var input=document.querySelector("#input")
 var mph=document.querySelector("#mph")
 var kph=document.querySelector("#kph")
+var loader=document.querySelector(".loader")
+var con=document.querySelector(".forerr")
+var err=document.querySelector(".error")
 async function getdata(){
+
+loader.style.display="block";
 const res=await fetch(`https://api.weatherapi.com/v1/current.json?key=c4ad55973ff54e0d82035204231604&q=${input.value}`,{headers: {
       "Content-Type": "application/json"},method:"GET"})
 .then(function(response){
+
 return response.json();
 })
 .then(function(data){
+loader.style.display="none";
 degeree.innerHTML=`${data.current.temp_f}°F`;
 place.innerHTML=data.location.name;
 climate.innerHTML=data.current.condition.text;
@@ -37,10 +44,18 @@ image.src="weathericons/haze.svg"
 else if(data.current.condition.text=="Mist"){
 image.src="weathericons/cloud.svg"
 }
+else if(data.current.condition.text=="Light rain shower"){
+image.src="weathericons/rain.svg"
+}
+
 
 else{
 console.log("error");
 }
+})
+.catch(function()
+{
+alert("invalid city")
 })
 
 }
@@ -50,6 +65,8 @@ if(input.value=="")
 {
 alert("pls enter value")
 }
+else{
 getdata();
 input.value="";
+}
 })
