@@ -7,8 +7,7 @@ var input=document.querySelector("#input")
 var mph=document.querySelector("#mph")
 var kph=document.querySelector("#kph")
 var loader=document.querySelector(".loader")
-var con=document.querySelector(".forerr")
-var err=document.querySelector(".error")
+
 async function getdata(){
 
 loader.style.display="block";
@@ -55,7 +54,7 @@ console.log("error");
 })
 .catch(function()
 {
-alert("invalid city")
+alert("invalid input")
 })
 
 }
