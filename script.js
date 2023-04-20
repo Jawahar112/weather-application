@@ -54,7 +54,7 @@ console.log("error");
 })
 .catch(function()
 {
-alert("invalid input")
+alert("invalid city")
 })
 
 }
