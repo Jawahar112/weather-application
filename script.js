@@ -25,26 +25,26 @@ climate.innerHTML=data.current.condition.text;
 mph.innerHTML=`${data.current.wind_mph}mph`;
 kph.innerHTML=`${data.current.wind_kph}kph`;
 if(data.current.condition.text=="Clear"){
-image.src="weathericons/clear.svg"
+image.src="images/clear.svg"
 }
 else if(data.current.condition.text=="Partly cloudy"){
-image.src="weathericons/cloud.svg"
+image.src="images/cloud.svg"
 }
 else if(data.current.condition.text=="Sunny"){
- image.src="weathericons/clear.svg"
+ image.src="images/clear.svg"
 }
 else if(data.current.condition.text=="Moderateorheavyrainwiththunder"){
 climate.style.fontsize="5px";
-image.src="weathericons/rain.svg"
+image.src="images/rain.svg"
 }
 else if(data.current.condition.text == "Patchy rain possible"){
-image.src="weathericons/haze.svg"
+image.src="images/haze.svg"
 }
 else if(data.current.condition.text=="Mist"){
-image.src="weathericons/cloud.svg"
+image.src="images/cloud.svg"
 }
 else if(data.current.condition.text=="Light rain shower"){
-image.src="weathericons/rain.svg"
+image.src="images/rain.svg"
 }
 
 
